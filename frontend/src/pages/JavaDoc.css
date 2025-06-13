@@ -1,0 +1,130 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #1a202c;
+  color: #f7fafc;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #1a202c, #2d3748);
+}
+
+.roadmap-container {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  width: 95%;
+  max-width: 1200px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roadmap-item {
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-0.25rem);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #4a148c, #1a237e);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 0.5rem;
+}
+
+.roadmap-item:hover::before {
+  opacity: 0.05;
+}
+
+.roadmap-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.roadmap-item:hover .roadmap-title {
+  color: #ffffff;
+}
+
+.roadmap-details {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.roadmap-details ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.roadmap-details li {
+  margin-bottom: 0.3rem;
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .roadmap-container {
+    padding: 1.5rem;
+  }
+
+  .roadmap-item {
+    padding: 1rem;
+  }
+
+  .roadmap-title {
+    font-size: 1.1rem;
+  }
+
+  .roadmap-details {
+    font-size: 0.9rem;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+  }
+}

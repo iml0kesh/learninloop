@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Fixed typo: BrowerRouter -> BrowserRouter
 
-function App() {
+import JavaDoc from "./pages/JavaDoc";
+
+const App = () => { // Fixed export syntax
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/learning/java" element={<JavaDoc />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
-export default App;
+export default App; // Moved export to bottom

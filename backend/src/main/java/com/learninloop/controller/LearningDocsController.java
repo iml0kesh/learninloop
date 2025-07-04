@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LearningDocsController {
 
+    @GetMapping("/")
+    public void getHome() {}
+
     @GetMapping("/learning/java")
     public String getJava() {
         return "Java";
